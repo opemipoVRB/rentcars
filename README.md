@@ -1,6 +1,6 @@
 # RentCars
 
 
-![alt text](coverage.svg)
-![alt text](erd.png)
+### Code Coverage ![alt text](coverage.svg)
+### ERD Diagram ![alt text](erd.png)
 
