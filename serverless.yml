@@ -1,0 +1,31 @@
+service: serverless-flask
+plugins:
+  - serverless-python-requirements
+  - serverless-wsgi
+  - serverless-domain-manager
+custom:
+  wsgi:
+    app: app.app
+    packRequirements: false
+  pythonRequirements:
+    dockerizePip: true
+  customDomain:
+    domainName: api.rentcars.com
+    basePath: ''
+    stage: ${self:provider.stage}
+    createRoute53Record: true
+package:
+  exclude:
+    - node_modules/**
+    - venv/**
+provider:
+  name: aws
+  runtime: python3.9
+  stage: dev
+  region: us-east-1
+functions:
+  app:
+    handler: wsgi_handler.handler
+    events:
+      - http: ANY /
+      - http: 'ANY {proxy+}'

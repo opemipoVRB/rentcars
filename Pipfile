@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "*"
+pytest = "*"
+pydantic = {extras = ["email"],version = "*"}
+jsonschema = "*"
+pytest-cov = "*"
+requests = "*"
+isort = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
