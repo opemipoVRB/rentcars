@@ -12,6 +12,7 @@ pytest-cov = "*"
 requests = "*"
 isort = "*"
 coverage = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
